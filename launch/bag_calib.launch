@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- otto_serial_driver and firmware parameters-->
+  <include file="$(find otto_serial_driver)/launch/otto_serial_driver.launch"/>
+
+  <!-- node to publish left and right vel -->
+  <node name="otto_odom_laser_calib" pkg="otto_utils" type="otto_odom_laser_calib.py" output="screen"/>
+
+  <!-- laser node to publish /scan -->
+  <include file="$(find otto_utils)/launch/hokuyo_laser.launch"/>
+
+  <!-- joypad launch to move otto-->
+  <include file="$(find otto_utils)/launch/joypad.launch"/>
+
+  <!-- record with rosbag -->
+  <node pkg="rosbag" type="record" name="rosbag_record_diag" args="record otto_odom_calib scan -o /home/fdila/tmp/otto_calib"/>   
+
+</launch>
