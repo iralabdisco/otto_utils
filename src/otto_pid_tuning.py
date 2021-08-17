@@ -4,7 +4,8 @@ from nav_msgs.msg import Odometry
 from geometry_msgs.msg import Point, Pose, Quaternion, Twist, Vector3
 from rospy.client import load_command_line_node_params
 import tf
-from otto_serial_driver.msg import otto_ticks, otto_pid_tuning_values
+from otto_serial_driver.msg import otto_ticks
+from otto_utils.msg import otto_pid_tuning_values
 
 baseline = 0.0
 ticks_per_revolution = 0
