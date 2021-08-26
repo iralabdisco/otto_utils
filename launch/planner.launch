@@ -1,0 +1,9 @@
+
+<launch>
+	<node name="map_server" pkg="map_server" type="map_server" args="/home/fdila/catkin_ws/src/otto_utils/maps/cortile.yaml" />
+	<!-- <include file="$(find otto_utils)/launch/hokuyo_laser.launch"/> -->
+	<!-- <include file="$(find otto_utils)/launch/amcl.launch"/> -->
+	<include file="$(find otto_utils)/launch/move_base.launch"/>
+	<node name="rviz" pkg="rviz" type="rviz"/>
+</launch>
+
