@@ -37,8 +37,9 @@ def start():
     global max_angular
     rospy.init_node('joy_to_cmd_vel')
 
-    max_linear = rospy.get_param("max_linear", 0.3)
-    max_angular = rospy.get_param("max_angular", 1)
+    max_linear = rospy.get_param("~max_linear", 0.4)
+    max_angular = rospy.get_param("~max_angular", 1)
+
     print("Starting joypad with max_linear: " + str(max_linear) + " and max_angular: " + str(max_angular))
 
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
