@@ -42,6 +42,12 @@ def start():
 
     print("Starting joypad with max_linear: " + str(max_linear) + " and max_angular: " + str(max_angular))
 
+    print("Usage:")
+    print("  Stop: 1")
+    print("  Keep the back triggers (buttons 6 and 8) pressed to move")
+    print("  Left stick: turn left/right")
+    print("  Right stick: move forward/backward")
+
     pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
     rospy.Subscriber("joy", Joy, callback)
     rospy.spin()
