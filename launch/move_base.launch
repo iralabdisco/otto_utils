@@ -1,7 +1,7 @@
 <launch>
   <arg name="base_global_planner" default="global_planner/GlobalPlanner"/>
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam name="recovery_behavior_enabled" value="false"/>
+    <param name="recovery_behavior_enabled" value="false"/>
     
     <rosparam file="$(find otto_utils)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
     <rosparam file="$(find otto_utils)/config/local_costmap_params.yaml" command="load" ns="local_costmap"/>
