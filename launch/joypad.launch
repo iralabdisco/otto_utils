@@ -1,7 +1,7 @@
 <launch>
   <node name="joy_node" pkg="joy" type="joy_node" />
   <node name="joy_to_cmd_vel" pkg="otto_utils" type="joy_to_cmd_vel.py" output="screen">
-    <param name="max_linear" value="2"/>				
-    <param name="max_angular" value="2"/>
+    <param name="max_linear" value="1"/>				
+    <param name="max_angular" value="1"/>
   </node>
 </launch>
